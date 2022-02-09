@@ -25,6 +25,6 @@ steps:
     project: '622191f2-3ad3-49e0-b0fc-8ad84f8281ff'
     queryType: 'Shared'
     query: 'f417cf2c-73d1-40f6-b10b-f74bd2229438'
-    sendIfEmpty: false
+    sendIfEmpty: true
     subject: 'DevOps Escalation Age Monitor - Results'
     emailAddresses: 'athompson@parata.com,tkriete@parata.com,smarie@parata.com'
