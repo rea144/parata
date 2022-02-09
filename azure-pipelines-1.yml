@@ -17,3 +17,14 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+
+- task: ADOScheduledWorkItemQuery@0
+  inputs:
+    sendMethod: 'SendGrid'
+    connectedServiceNameSendGrid: 'devops monitor'
+    project: '622191f2-3ad3-49e0-b0fc-8ad84f8281ff'
+    queryType: 'Shared'
+    query: 'f417cf2c-73d1-40f6-b10b-f74bd2229438'
+    sendIfEmpty: false
+    subject: 'DevOps Escalation Age Monitor - Results'
+    emailAddresses: 'athompson@parata.com,tkriete@parata.com,smarie@parata.com'
