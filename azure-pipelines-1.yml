@@ -1,17 +1,5 @@
 # Node.js
-- task: ADOScheduledWorkItemQuery@0
-  inputs:
-    sendMethod: 'SendGrid'
-    connectedServiceNameSendGrid: 'devops monitor'
-    project: '622191f2-3ad3-49e0-b0fc-8ad84f8281ff'
-    queryType: 'Shared'
-    query: 'f417cf2c-73d1-40f6-b10b-f74bd2229438'
-    sendIfEmpty: false
-    subject: 'Aging Escalations Monitor'
-    emailAddresses: |
-      athompson@parata.com
-      tkriete@parata.com
-      smarie@parata.com
+
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -32,3 +20,17 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+
+- task: ADOScheduledWorkItemQuery@0
+  inputs:
+    sendMethod: 'SendGrid'
+    connectedServiceNameSendGrid: 'devops monitor'
+    project: '622191f2-3ad3-49e0-b0fc-8ad84f8281ff'
+    queryType: 'Shared'
+    query: 'f417cf2c-73d1-40f6-b10b-f74bd2229438'
+    sendIfEmpty: false
+    subject: 'Aging Escalations Monitor'
+    emailAddresses: |
+      athompson@parata.com
+      tkriete@parata.com
+      smarie@parata.com
